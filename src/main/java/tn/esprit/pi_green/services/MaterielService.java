@@ -34,11 +34,6 @@ public class MaterielService {
     // Update Materiel
     public Materiel updateMateriel(int id, Materiel materielDetails) {
         return materielRepository.findById(id).map(materiel -> {
-            materiel.setType(materielDetails.getType());
-            materiel.setModele(materielDetails.getModele());
-            materiel.setStatut(materielDetails.getStatut());
-            materiel.setEmplacement(materielDetails.getEmplacement());
-            materiel.setDateInstallation(materielDetails.getDateInstallation());
             return materielRepository.save(materiel);
         }).orElseThrow(() -> new RuntimeException("Materiel not found"));
     }

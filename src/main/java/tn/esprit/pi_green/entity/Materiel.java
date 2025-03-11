@@ -1,16 +1,18 @@
 package tn.esprit.pi_green.entity;
 
 import jakarta.persistence.*;
-import java.io.Serializable;
-import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
+@Setter
+@Getter
 @Entity
 @Table(name = "materiel")
-@Getter
-@Setter
 public class Materiel implements Serializable {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,4 +35,5 @@ public class Materiel implements Serializable {
     @ManyToOne
     @JoinColumn(name = "serre_id", nullable = false)
     private Serre serre;
+
 }

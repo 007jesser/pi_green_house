@@ -2,7 +2,6 @@ package tn.esprit.pi_green.controller;
 
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.pi_green.entity.Plante;
-import tn.esprit.pi_green.entity.Plante;
 import tn.esprit.pi_green.services.*;
 import java.util.List;
 

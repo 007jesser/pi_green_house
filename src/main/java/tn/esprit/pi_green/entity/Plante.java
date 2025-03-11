@@ -6,13 +6,12 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-@Setter
-@Getter
 @Entity
 @Table(name = "plante")
+@Getter
+@Setter
 public class Plante implements Serializable {
 
-    // ✅ Getters & Setters
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -20,21 +19,23 @@ public class Plante implements Serializable {
     @Column(nullable = false)
     private String name;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String species;
+    private PlantType species; // Using PlantType enum
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String growthStage;
+    private GrowthStage growthStage; // Using GrowthStage enum
 
     private float temperatureRequirement;
     private float humidityRequirement;
     private LocalDateTime lastWatered;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String healthStatus;
+    private HealthStatus healthStatus; // Using HealthStatus enum
 
     @ManyToOne
     @JoinColumn(name = "serre_id", nullable = false)
     private Serre serre;
-
 }

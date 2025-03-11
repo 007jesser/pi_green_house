@@ -33,21 +33,7 @@ public class SerreService {
     // Update: Update an existing serre
     public Serre updateSerre(int id, Serre serreDetails) {
         Optional<Serre> optionalSerre = serreRepository.findById(id);
-
-        if (optionalSerre.isPresent()) {
-            Serre serre = optionalSerre.get();
-            serre.setName(serreDetails.getName());
-            serre.setLocation(serreDetails.getLocation());
-            serre.setTemperature(serreDetails.getTemperature());
-            serre.setHumidity(serreDetails.getHumidity());
-            serre.setPlantes(serreDetails.getPlantes());
-            serre.setMateriels(serreDetails.getMateriels());
-
-            return serreRepository.save(serre);
-        } else {
-            // Handle case where serre with the given id does not exist
-            throw new RuntimeException("Serre not found with id: " + id);
-        }
+        return serreRepository.save(serreDetails);
     }
 
     // Delete: Delete a serre by its id

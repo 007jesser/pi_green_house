@@ -1,8 +1,8 @@
 package tn.esprit.pi_green.entity;
 
-import lombok.*;
-
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
 @Table(name = "serre")
 public class Serre implements Serializable {
 
-    // Getters and Setters
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
