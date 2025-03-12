@@ -5,13 +5,13 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IMaterielService {
-    // Create Materiel
+    // Create Materials
     Materiel createMateriel(Materiel materiel);
 
-    // Read All Materiels
+    // Read All Materials
     List<Materiel> getAllMateriels();
 
-    // Read Materiel by ID
+    // Read Materials by ID
     Optional<Materiel> getMaterielById(int id);
 
     // Update Materiel
